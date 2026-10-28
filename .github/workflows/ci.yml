@@ -17,7 +17,7 @@ jobs:
       postgres:
         image: postgres:17
         env:
-          POSTGRES_USER: taskflow
+          POSTGRES_USER: taskflow     
           POSTGRES_PASSWORD: test_password
           POSTGRES_DB: taskflow_test
         ports:
@@ -50,4 +50,4 @@ jobs:
         run: uv run alembic upgrade head
       
       - name: Executar testes automatizados
-        run: uv run pytest -v
+        run: uv run python -m pytest -v
